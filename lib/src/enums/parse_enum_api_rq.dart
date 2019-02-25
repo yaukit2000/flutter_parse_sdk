@@ -12,7 +12,7 @@ enum ParseApiRQ {
   currentUser,
   signUp,
   login,
-  logout,
+  linkWith,
   loginAnonymous,
   verificationEmailRequest,
   requestPasswordReset,

@@ -35,9 +35,12 @@ class _MyAppState extends State<MyApp> {
 
   initParse() async {
     // Initialize parse
-    Parse().initialize(ApplicationConstants.keyParseApplicationId,
-        ApplicationConstants.keyParseServerUrl,
-        masterKey: ApplicationConstants.keyParseMasterKey, debug: true);
+    // Parse().initialize(ApplicationConstants.keyParseApplicationId,
+    //     ApplicationConstants.keyParseServerUrl,
+    //     masterKey: ApplicationConstants.keyParseMasterKey, debug: true);
+    Parse().initialize("ds4n5vmOjMxlr3b8NgTgfprobLIefBNUqGSdQVXd",
+        "http://localhost:1339/dentihk",
+        clientKey: "BvJBrjatkh2jYoMfRMZJhV7vEbBKueqQJYw276Oj", debug: true);
 
     // Check server is healthy and live - Debug is on in this instance so check logs for result
     var response = await Parse().healthCheck();
@@ -48,16 +51,33 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  runTestQueries() {
-    createItem();
-    getAllItems();
-    getAllItemsByName();
-    getSingleItem();
-    getConfigs();
-    query();
-    initUser();
-    function();
-    functionWithParameters();
+  runTestQueries() async {
+    // createItem();
+    // getAllItems();
+    // getAllItemsByName();
+    // getSingleItem();
+    // getConfigs();
+    // query();
+    // initUser();
+    // function();
+    // functionWithParameters();
+    try {
+      var authData = {
+        "authData": {
+          "firebase_google": {
+            "provider": "google",
+            "dentist_id": "test_dentist_id",
+            "access_token": "test_token",
+            "id": "test_Id"
+          },
+        }
+      };
+      var user = ParseUser(null, null, null);
+      var user2 = await user.linkWith(authData);
+      print(user);
+    } catch (e) {
+      print(e);
+    }
   }
 
   void createItem() async {
