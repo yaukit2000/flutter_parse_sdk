@@ -179,6 +179,7 @@ class ParseObject extends ParseBase implements ParseCloneable {
       Uri url = Uri(
           scheme: tempUri.scheme,
           host: tempUri.host,
+          port: tempUri.port,
           path: "${tempUri.path}$_path",
           query: query);
 
