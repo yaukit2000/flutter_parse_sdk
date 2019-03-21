@@ -1,3 +1,22 @@
+## 1.0.16
+Bug fixes
+Fixed object delete
+Added port support
+
+## 1.0.15
+Fixed 'full' bool issue
+
+## 1.0.14
+Corrected delete & path issue
+Added Geo queries
+Added ability to add login oAuth data
+
+## 1.0.13
+Added full bool to convert objects to JSON correctly
+
+## 1.0.12
+Fixed logout
+
 ## 1.0.11
 ParseFile fixed
 Anonymous login
